@@ -1,0 +1,22 @@
+#Options
+GenerateScanner = true
+GenerateParser = true
+Language = Java
+ScannerName = Lexico
+ParserName = Sintatico
+SemanticName = Semantico
+Package = gals
+ScannerCaseSensitive = true
+ScannerTable = Full
+Input = String
+Parser = SLR
+#RegularDefinitions
+ignorar: [^0-9A-Za-z]+
+caracter: [0-9a-zA-Z]
+#Tokens
+: {ignorar}
+caracter: {caracter}
+#NonTerminals
+<CRIPTO>
+#Grammar
+<CRIPTO> ::= caracter #1 <CRIPTO> | î;
